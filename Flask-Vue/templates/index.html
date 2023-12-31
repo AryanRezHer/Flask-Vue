@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" id="app">
+                <ul>
+                    <input v-model="newUsr">
+                    <button v-on:click="nuevousuario">Nuevo usuario</button>
+                    <li v-for="usuario in usuarios_lista" :key="usuario.id">
+                    { message } { usuario.nombre }
+                    <button v-on:click="eliminarusuario(usuario.id)">Borrar usuario</button>
+                    </li>
+                    <div v-if="numero">
+                        { numero } 
+                    </div>
+                    <div v-else>
+                        { message2 } 
+                    </div>
+                </ul>
+                <button v-on:click="increment">Incrementa</button>
+                <button v-on:click="decrement">Decrementa</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
